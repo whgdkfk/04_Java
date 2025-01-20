@@ -23,7 +23,7 @@ public class VariableEx1 {
 		 * - 비트(bit): 컴퓨터가 나타내는 데이터의 최소 저장 단위
 		 * - 바이트(byte): 데이터 처리 또는 문자의 최소 단위 (1byte == 8bit)
 		 * * 1byte == 8bit
-		 * -> 컴퓨터가 데이터 처리(연산)를 위한 최소 단위
+		 * → 컴퓨터가 데이터 처리(연산)를 위한 최소 단위
 		 * 
 		 * ***** [Java 기본 자료형 8가지(매우 중요)] <- 시험에 나옴 *****
 		 * - 논리형
@@ -56,7 +56,7 @@ public class VariableEx1 {
 		 * - const, let, var
 		 * 
 		 * JS에서 변수 자료형은 언제 결정될까?
-		 *  -> 값이 대입되는 순간 결정
+		 *  → 값이 대입되는 순간 결정
 		 * let temp; // undefined
 		 * temp = 10; // number
 		 * temp = "하이"; // string
@@ -82,7 +82,7 @@ public class VariableEx1 {
 		num1 = 200;
 		System.out.println("num1: " + num1);
 		
-		// println() snippet(약어, 줄임말): sysout -> ctrl + space -> enter
+		// println() snippet(약어, 줄임말): sysout → ctrl + space → enter
 		System.out.println("-------------------------------");
 		
 		System.out.println("[자료형별 리터럴 작성법]");
@@ -108,11 +108,11 @@ public class VariableEx1 {
 		// int intNum2 = 2147483648;
 		
 		// 정수형 중에서 범위가 더 큰 long 사용
-		// long longNum1 = 2147483648; <- 일반 정수 표기법 == int로 인식
+		// long longNum1 = 2147483648; ← 일반 정수 표기법 == int로 인식
 		// long longNum1 = 2147483648L or 2147483648l;로 표기 == long으로 인식
 		long longNum1 = 2147483648L;
 		
-		// 자릿수 구분을 위해 _(언더스코어) 사용 가능 -> 연산 시 인식X
+		// 자릿수 구분을 위해 _(언더스코어) 사용 가능 → 연산 시 인식X
 		long longNum2 = 30_000_000_000L; // 300억
 		
 		// 출력 결과에 리터럴 표기법 L, l, _ 포함X 
@@ -190,9 +190,10 @@ public class VariableEx1 {
 		System.out.println("str2: " + str2);
 		System.out.println(System.identityHashCode(str2));
 		
+		// 변수명 명명 규칙
 		int num123;
-		// int 123num; (X)
-		// int num_1;  (X)
+		// int 123num; (X) // 숫자로 시작하면 안 됨
+		// int num_1;  (X) // ‘_’ 사용 시 컴파일 에러는 없지만 관례상 사용하지 않는 것이 좋음
 		final int NATIONAL_CODE = 82; // final 들어간 표기에서만 _ 사용
 		int 정수1 = 10; // 가능하지만 사용X
 		double 실수2 = 3.14; // 가능하지만 사용X

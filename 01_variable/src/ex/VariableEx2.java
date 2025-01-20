@@ -31,7 +31,7 @@ public class VariableEx2 {
 		// 3) double + double의 결과로 double 반환
 		
 		// int result1 = a1 + b1;
-		// [int result1 = double] X(double을 int에 대입X)
+		// [int result1 = double]X (double을 int에 대입X)
 		// → 자료형이 같지 않아 연산 불가
 		// → 변수 선언 자료형 int처럼 명시한 자료형은 자동 형변환의 대상이 아님
 		//   → 개발자가 직접 double로 변경해서 작성
