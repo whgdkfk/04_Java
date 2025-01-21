@@ -19,7 +19,7 @@ public class VariableEx4 {
 		
 		// The final local variable NATIONAL_CODE cannot be assigned. 
 		// It must be blank and not using a compound assignment.
-		// 최종 로컬 변수인 NATIONAL_CODE를 할당할 수 없습니다. 
+		// 최종 지역 변수인 NATIONAL_CODE를 할당할 수 없습니다. 
 		// 빈칸이어야 하며 복합 할당을 사용해서는 안 됩니다.
 		// NATIONAL_CODE = 1; // 오류 발생(대입 불가)
 		

@@ -82,7 +82,7 @@ public class VariableEx1 {
 		num1 = 200;
 		System.out.println("num1: " + num1);
 		
-		// println() snippet(약어, 줄임말): sysout → ctrl + space → enter
+		// println() snippet(약어, 줄임말): sysout → ctrl + space + enter
 		System.out.println("-------------------------------");
 		
 		System.out.println("[자료형별 리터럴 작성법]");
@@ -194,7 +194,7 @@ public class VariableEx1 {
 		int num123;
 		// int 123num; (X) // 숫자로 시작하면 안 됨
 		// int num_1;  (X) // ‘_’ 사용 시 컴파일 에러는 없지만 관례상 사용하지 않는 것이 좋음
-		final int NATIONAL_CODE = 82; // final 들어간 표기에서만 _ 사용
+		final int NATIONAL_CODE = 82; // final 들어간 표기에서만 전체 대문자 & _ 사용
 		int 정수1 = 10; // 가능하지만 사용X
 		double 실수2 = 3.14; // 가능하지만 사용X
 		
