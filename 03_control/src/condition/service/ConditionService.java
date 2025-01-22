@@ -136,6 +136,7 @@ public class ConditionService {
 		System.out.println("1. method1()");
 		System.out.println("2. method2()");
 		System.out.println("3. method3()");		
+		System.out.println("4. 성적 판별기");		
 		System.out.print("메뉴 번호 입력 >> ");
 		int input = sc.nextInt();
 		
@@ -144,6 +145,7 @@ public class ConditionService {
 			case 1 : method1(); break;
 			case 2 : method2(); break;
 			case 3 : method3(); break;
+			case 4 : method4(); break;
 			default : System.out.println("없는 메뉴 번호입니다."); 
 		}
 		
@@ -181,48 +183,93 @@ public class ConditionService {
 	 *</pre>
 	 */
 	public void method4() {
+		
 		System.out.print("이름: ");
-		String name = sc.next();
+		String name = sc.next(); // 입력 버퍼에서 다음 문자열(단어) 얻어오기
 		
 		System.out.print("중간고사 점수(40%): ");
-		int midterm = sc.nextInt();
+		int midTerm = sc.nextInt();
 		
 		System.out.print("기말고사 점수(50%): ");
-		int finalexam = sc.nextInt();
+		int finalTerm = sc.nextInt();
 		
 		System.out.print("과제 점수(10%): ");
-		int homework = sc.nextInt();
+		int report = sc.nextInt();
 		
-		int score = (midterm + finalexam + homework) / 3;
-		String grade = "";
+		// 점수 합계
+		double sum = (midTerm * 0.4) + (finalTerm * 0.5) + (report * 0.1); 
 		
-		if(score < 60) {
-			grade = "F";
-		} else if(score < 65) {
-			grade = "D";
-		} else if(score < 70) {
-			grade = "D+";
-		} else if(score < 75) {
-			grade = "C";
-		} else if(score < 80) {
-			grade = "C+";
-		} else if(score < 85) {
-			grade = "B";
-		} else if(score < 90) {
-			grade = "B+";
-		} else if(score < 95) {
-			grade = "A";
-		} else {
-			grade = "A+";
+		String result; // 성적 저장용 변수
+		
+		// Java의 지역변수는 초기화 안 되면 사용 불가
+		// String result = "";로 바꾸면 사용 가능
+		// System.out.println(result); // 오류 발생
+		
+		// [십의 자리 생각]
+		// (int)sum/10
+		// : sum을 먼저 int로 강제 형변환 후 10으로 나눔
+		// → 십의 자리 숫자만 남기는 식
+		switch( (int)sum/10 ) { // switch문 () 내에는 정수/문자열만 작성 가능
+			// break; switch문을 멈춰라
+			// 하나의 case에 여러 경우를 , 기호를 이용하여 작성 가능(Java만 가능, JS 안 됨)
+			case 9, 10:  result = "A"; break; 
+			case 8:  result = "B"; break; 
+			case 7:  result = "C"; break; 
+			case 6:  result = "D"; break; 
+			default: result = "F";
 		}
 		
-		System.out.println();
-		System.out.println(name + "의 최종 점수: " + score);
-		System.out.println("성적: " + grade);
+		// [일의 자리 생각]
+		// 합계가 100점 또는 
+		// 합계가 60점대 이상이면서 나머지가 5 이상인 경우(65~, 75~, 85~, 95~)
+		// &&가 ||보다 우선순위 높음 → 괄호 없어도 됨
+		if(sum == 100 || (sum >= 60.0 && sum % 10 >= 5)) {
+			result += "+";
+		}
+		
+		// 결과 출력
+		System.out.printf("\n%s의 최종 점수: %.1f점\n", name, sum);
+		System.out.println("성적: " + result);
+		
+		
+//		System.out.print("이름: ");
+//		String name = sc.next();
+//		
+//		System.out.print("중간고사 점수(40%): ");
+//		int midterm = sc.nextInt();
+//		
+//		System.out.print("기말고사 점수(50%): ");
+//		int finalexam = sc.nextInt();
+//		
+//		System.out.print("과제 점수(10%): ");
+//		int homework = sc.nextInt();
+//		
+//		int score = (midterm * 0.4) + (finalexam * 0.5) + (homework * 0.1); 
+//		String grade = "";
+//		
+//		if(score < 60) {
+//			grade = "F";
+//		} else if(score < 65) {
+//			grade = "D";
+//		} else if(score < 70) {
+//			grade = "D+";
+//		} else if(score < 75) {
+//			grade = "C";
+//		} else if(score < 80) {
+//			grade = "C+";
+//		} else if(score < 85) {
+//			grade = "B";
+//		} else if(score < 90) {
+//			grade = "B+";
+//		} else if(score < 95) {
+//			grade = "A";
+//		} else {
+//			grade = "A+";
+//		}
+//		
+//		System.out.println();
+//		System.out.println(name + "의 최종 점수: " + score);
+//		System.out.println("성적: " + grade);
 		
 	}
-	
-	
-	
-	
 }

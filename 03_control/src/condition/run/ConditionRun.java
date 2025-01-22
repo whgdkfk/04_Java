@@ -17,7 +17,7 @@ public class ConditionRun {
 		// service.method1(); // 1 ~ 10 사이 난수(정수)가 짝수인지 홀수인지 검사
 		// service.method2(); // 나이를 입력받아 "어린이", "청소년", "성인" 구분
 		// service.method3(); // 나이를 입력받아 "어린이", "청소년(중학생)", "청소년(고등학생)", "성인" 구분
-		// service.displayMenu(); // ConditionService에 작성된 메서드를 골라서 실행하는 메서드
-		service.method4(); // 성적 판별기
+		service.displayMenu(); // ConditionService에 작성된 메서드를 골라서 실행하는 메서드
+		// service.method4(); // 성적 판별기
 	}
 }
