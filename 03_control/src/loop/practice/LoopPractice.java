@@ -247,19 +247,62 @@ public class LoopPractice {
 	 *  *****
 	 * *******
 	 */
+//	public void practice11() {
+//		System.out.println("[practice11]");
+//		System.out.print("정수 입력: ");
+//		int num = sc.nextInt();
+//		
+//		for(int i=0; i<num; i++) {
+//			for(int j=num-i-1; j>0; j--) {
+//				System.out.print(" ");
+//			}
+//			for(int k=0; k<=i*2; k++) {
+//				System.out.print("*");
+//			}
+//		
+//			System.out.println();
+//		}
+//	}
+	
 	public void practice11() {
 		System.out.println("[practice11]");
 		System.out.print("정수 입력: ");
-		int num = sc.nextInt();
+		int input = sc.nextInt();
 		
-		for(int i=0; i<num; i++) {
-			for(int j=num-i-1; j>0; j--) {
+		for(int row=1; row<=input; row++) {
+			// 앞쪽 공백 추가 방법1
+			// row blank input-row
+			//  1    3     4-1
+			//  2    2     4-2
+			//  3    1     4-3
+			//  4    0     4-4
+			for(int blank=1; blank<=input-row; blank++) {
 				System.out.print(" ");
 			}
-			for(int k=0; k<=i*2; k++) {
+			for(int col=1; col<=2*row-1; col++) {
 				System.out.print("*");
 			}
+			System.out.println(); // 개행
+		}
 		
+		System.out.println("-----------------------------");
+		
+		for(int row=1; row<=input; row++) {
+			
+			for(int col=1; col<=2*input-1; col++) {
+			// 앞쪽 공백 추가 방법2
+			// col   row   input-row
+			// 1~4    1       3
+			//        2       2	
+			//        3       1
+			//        4       0
+		 // if(col <= input - row) { // col = 1~3
+				if(input+row<=col || input-row>=col) { // 앞 공백 || 뒷 공백
+					System.out.print(" ");
+				}else { // col = 4
+					System.out.print("*");
+				}
+			}
 			System.out.println();
 		}
 	}
@@ -278,15 +321,18 @@ public class LoopPractice {
 	public void practice12() {
 		System.out.println("[practice12]");
 		System.out.print("정수 입력: ");
-		int num = sc.nextInt();
+		int input = sc.nextInt();
 		
-		for(int i=1; i<=num; i++) {
-			for(int j=0; j<num; j++) { 
-				System.out.print("*");
-			
+		for(int row=1; row<=input; row++) {
+			for(int col=1; col<=input; col++) { 
+				// 첫 번째/마지막 행/열만 * 출력
+				if(row == 1 || row == input || col == 1 || col == input) {
+					System.out.print("*");
+				}else {
+					System.out.print(" ");					
+				}
 			}
 			System.out.println();
-			
 		}
 	}
 	
@@ -307,6 +353,45 @@ public class LoopPractice {
 			}
 			System.out.print(i + " ");
 		}	
+		
+	}
+	
+	/**
+	 * 	[실습문제 16]
+	 *  2부터 사용자가 입력한 수까지의 소수를 모두 출력하고 
+	 *  소수의 개수를 출력하세요.
+	 *	단, 입력한 수가 2보다 작은 경우 
+	 *  “잘못 입력하셨습니다.”를 출력하세요.
+	 */
+	public void practice16() {
+		System.out.print("숫자: ");
+		int num = sc.nextInt();
+		
+		// 소수 개수를 세기 위한 변수
+		int count = 0;
+		
+		// 2부터 입력받은 수까지 1개씩 접근하는 for문
+		for(int i=2; i<=num; i++) {
+			// flag: 깃발(신호)
+			// true인 경우: 소수O
+			// false인 경우: 소수X
+			boolean flag = true; 
+			
+			// 1과 자기자신(num)을 뺀 정수를 한 개씩 접근(x)
+			for(int x=2; x<i; x++) {
+				//
+				if(i % x == 0) { // 1, 자기자신 빼고 나누어 떨어지는 존재
+					flag = false;
+					break;
+				}
+			}
+			
+			if(flag) { // true(소수라고 판별된 경우 수행)
+				System.out.print(i + " ");
+				count++;
+			}
+		}
+		System.out.printf("\n2부터 %d까지 소수의 개수는 %d개입니다.\n", num, count);
 		
 	}
 	
