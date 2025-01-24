@@ -33,6 +33,4 @@ public class Person {
 		// return "이름: " + name + " / 키: " + height; // private은 Person 안에서만 가능
 		return "이름: " + personName + " / 키: " + height; // 필드명 변경
 	}
-	
-	
 }
