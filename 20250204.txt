@@ -1,0 +1,14 @@
+[final 예약어]
+- final class: 상속 불가 클래스
+- final method: 오버라이딩 불가 메서드
+- final variable: 값 대입 불가 변수(상수)
+
+* 자바에서 클래스간의 상속은 단일 상속만 지원한다.
+----------------------------------------------------------
+
+다형성: 다양한 형태를 지니는 성질
+
+Parent p = new Parend();
+Parent p = new Child();
+
+public class Child extends Parent
