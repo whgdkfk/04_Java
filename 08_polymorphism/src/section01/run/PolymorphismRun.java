@@ -14,6 +14,7 @@ public class PolymorphismRun {
 		
 		// 실행: ctrl + f11
 		// 디버그: f11
-		service.test4(); 
+		// service.test4(); 
+		service.test5(); 
 	}
 }
