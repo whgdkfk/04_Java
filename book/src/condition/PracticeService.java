@@ -1,4 +1,4 @@
-package condition.service;
+package condition;
 
 public class PracticeService {
 	

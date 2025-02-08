@@ -1,6 +1,6 @@
-package condition.run;
+package condition;
 
-import condition.service.PracticeService;
+import condition.PracticeService;
 
 public class PracticeRun {
 	
