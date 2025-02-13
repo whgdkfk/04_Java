@@ -1,7 +1,7 @@
 package section02;
 
 /**
- * Person 클래스를 상속받은ㅇ Student 클래스
+ * Person 클래스를 상속받은 Student 클래스
  */
 
 // Person이 final 클래스인 경우
