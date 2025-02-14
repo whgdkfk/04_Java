@@ -67,6 +67,6 @@ public class TestRun {
 		// 얕은 복사(주소만 복사)를 이용한 다운 캐스팅
 		Child c2 = (Child)p2; // Child로 강제 형변환
 		System.out.println("c2.getCar(): " + c2.getCar());
-		
+		   
 	}
 }
